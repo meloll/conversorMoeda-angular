@@ -1,0 +1,32 @@
+<div   *ngIf="!login">
+    <p class="alert">Você não está logado!</p>
+    <button class="buttLogin" routerLink="" mat-raised-button color="accent" >
+        Login
+    </button>
+</div>
+
+<div *ngIf="login">
+    <mat-card >
+        <mat-card-title  >Converter</mat-card-title>
+        <form>
+            <mat-form-field>
+                <mat-select [(ngModel)]="moeda1" name="moeda1" placeholder="Escolha a moeda que queira converter">
+                    <mat-option  placeholder="Digite o valor" disabled="true">Selecione a moeda atual</mat-option>
+                    <mat-option *ngFor="let item of lista" [value]="item.high">{{item.name}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput [(ngModel)]="valor" name="valor" type="number"  placeholder="Digite o valor que deseja converter"  name="price">
+            </mat-form-field>
+        </form>
+        <button id="buttonConv" (click)="fazerConversao()"  mat-raised-button color="accent" >
+            Converter
+        </button>
+        <div class="result">
+            <b >Resultado:</b>
+        
+            <p id="p">R$:{{resultadoConvercao}}</p>
+        
+        </div>
+    </mat-card>
+    

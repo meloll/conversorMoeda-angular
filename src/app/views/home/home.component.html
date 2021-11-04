@@ -1,0 +1,17 @@
+<div  *ngIf="!login">
+    <p class="alert">Você não está logado!</p>
+    <button class="buttLogin" routerLink="" mat-raised-button color="accent" >
+        Login
+    </button>
+</div>
+
+<div *ngIf="login">
+    <mat-card class="home mat-elevation-z3">
+        <mat-card-title class="title">
+            Bem Vindo!
+        </mat-card-title>
+        <mat-card-subtitle class="subtitle">
+           ao sistema conversor de moedas.
+        </mat-card-subtitle>
+    </mat-card>
+</div>
