@@ -1,0 +1,32 @@
+<mat-card class="cardcad" >
+    <mat-card-title>Faça seu Cadastro</mat-card-title>
+    <form [formGroup]="formCadastro" #form="ngForm">
+        <mat-form-field>
+            <input matInput id="idusername"   formControlName="name" type="text" placeholder="Username" name="name" required="true"><br>
+            <small *ngIf="formCadastro.get('name')?.invalid" class="text-danger"></small>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput id="idemail"  formControlName="email" type="email" placeholder="E-mail"  name="email" required="true">
+            <small *ngIf="formCadastro.get('email')?.invalid" class="text-danger" ></small>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input id="iddata" matInput formControlName="data" type="date" placeholder="Data de Nascimento" name="data" required="true">
+            <small *ngIf="formCadastro.get('data')?.invalid"  class="text-danger"></small>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput id="idpassword"   formControlName="senha" type="password" placeholder="Senha" name="senha" required="true" maxlength="8"><br>
+            <small *ngIf="formCadastro.get('senha')?.invalid" class="text-danger"></small>
+        </mat-form-field>
+        <br>
+        
+          
+    </form>
+</mat-card>
+
+
+<button id="buttoncad" (click)="cadastratar();verificarData()"  mat-raised-button color="primary" >
+    Cadastrar
+</button>

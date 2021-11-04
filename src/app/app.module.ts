@@ -10,9 +10,17 @@ import {MatFormFieldModule}from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { MatFormFieldControl } from '@angular/material/form-field';
 import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
+import{ReactiveFormsModule} from '@angular/forms'
+
+
+import{AngularFireModule} from '@angular/fire'
+import {AngularFireAuth} from '@angular/fire/auth'
+import { AuthService } from './auth.service';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/template/header/header.component';
@@ -22,6 +30,10 @@ import { NavComponent } from './components/template/nav/nav.component';
 import { HomeComponent } from './views/home/home.component';
 import { ConversorComponent } from './views/conversor/conversor.component';
 import { LoginComponent } from './views/login/login.component';
+import { CadastroComponent } from './views/cadastro/cadastro.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -31,7 +43,9 @@ import { LoginComponent } from './views/login/login.component';
     NavComponent,
     HomeComponent,
     ConversorComponent,
-    LoginComponent
+    LoginComponent,
+    CadastroComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -50,9 +64,25 @@ import { LoginComponent } from './views/login/login.component';
     MatFormFieldModule,
     MatInputModule,
     MatOptionModule,
-    MatSelectModule
+    MatSelectModule,
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(
+      {
+        apiKey: "AIzaSyDfVg91st9jYQTMjOmejZjMvBG1fUAhPhs",
+        authDomain: "conversor-angular.firebaseapp.com",
+        projectId: "conversor-angular",
+        storageBucket: "conversor-angular.appspot.com",
+        messagingSenderId: "971356464396",
+        appId: "1:971356464396:web:9b5228c2fc0bf8bf81d529"
+  
+      }),
+    AngularFireAuthModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
+    
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -9,8 +9,19 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .alert{
     color:red;
+    font-size:25px;
 }
 .buttLogin{
     margin-left: 50px !important;
     margin-top: 10px;
+}
+
+.cardcad{
+    margin-top: 10px;
+    background-color: white;
+}
+
+
+body{
+    background-image: url("/src/assets/vintage-g146c52031_1920.jpg");
 }

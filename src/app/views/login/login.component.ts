@@ -1,5 +1,6 @@
-import { AppComponent, setLogin } from './../../app.component';
 import { Component, OnInit } from '@angular/core';
+import { setLogin } from 'src/app/app.component';
+import { AuthService } from 'src/app/auth.service';
 
 
 @Component({
@@ -9,14 +10,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private appComponent:AppComponent) { }
+  constructor(public authService:AuthService) { }
+
+  public email:string="";
+  public senha:string="";
+
+  public mostrarCadastro = false;
 
   ngOnInit(): void {
   }
   
   fazerLogin(){
-    setLogin(true);
+
+    this.authService.loginWithEmail(this.email,this.senha)
+    console.log("meu login")
+    console.log(this.email , "login")
+    console.log(this.senha , "senha")
+    
   }
+
+  liberarCasdastro(){
+    this.mostrarCadastro = !this.mostrarCadastro
+  }
+  
 
 }
 

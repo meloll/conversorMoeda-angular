@@ -1,6 +1,8 @@
 .header{
     display: flex;
     align-items: center;
+    background-color: black;
+   
 }
 
 .header a{
@@ -10,12 +12,12 @@
 
 }
 
-.header .logo{
-    max-height: 40px;
-}
+
 
 .header .title-group{
     padding-left: 15px;
+    font-weight: bold;
+    color: white;
     
 }
 

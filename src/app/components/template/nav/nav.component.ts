@@ -10,7 +10,6 @@ export class NavComponent implements OnInit {
 
   constructor() { }
 
-  login:any;
 
   ngOnInit(): void {
   }

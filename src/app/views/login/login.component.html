@@ -1,21 +1,27 @@
-<mat-card >
-    <mat-card-title>Login</mat-card-title>
-    <form>
-        <mat-form-field>
-            <input matInput placeholder="Username" name="name">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Password"  name="price">
-        </mat-form-field>
-    </form>
+
+<mat-card id="regcad">
+    <mat-card class="login-card">
+        <mat-card-title>Login</mat-card-title>
+        <form>
+            <mat-form-field>
+                <input matInput [(ngModel)]="email" placeholder="Email" name="email" required="true">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput [(ngModel)]="senha" type="password" placeholder="Password"  name="senha" required="true">
+            </mat-form-field>
+        </form>
+    </mat-card>
+
+
+    <button (click)="fazerLogin()"   mat-raised-button color="primary" >
+        Login
+    </button>
+
+
+    <button (click)="liberarCasdastro()" mat-raised-button color="accent">
+        Registre-se
+    </button>
 </mat-card>
-
-
-<button (click)="fazerLogin()"  mat-raised-button color="primary" routerLink="/home">
-    Login
-</button>
-
-
-<button mat-raised-button color="accent">
-    Registre-se
-</button>
+<mat-card class="cardcad" id="regcad" *ngIf="mostrarCadastro" >
+    <app-cadastro></app-cadastro>
+</mat-card>
