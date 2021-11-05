@@ -79,7 +79,8 @@ import { MatSortModule } from '@angular/material/sort';
     AngularFireAuthModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatSnackBarModule
     
   ],
   providers: [AuthService],

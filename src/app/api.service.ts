@@ -26,7 +26,8 @@ interface Imodedas {
       name: string,
       pctChange: string,
       timestamp: string,
-      varBid: string
+      varBid: string,
+      sim:"USD"
   }
   CAD:{
     ask: string,

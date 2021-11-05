@@ -4,6 +4,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { setLogin } from './app.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class AuthService {
   //user:Observable<firebase.User> ;
   authError:any;
   
-  constructor(public firebaseAuth:AngularFireAuth,private router: Router) { 
+  constructor(private snackBar: MatSnackBar,public firebaseAuth:AngularFireAuth,private router: Router) { 
     //this.user = firebaseAuth.authState;
   }
 
@@ -26,6 +27,12 @@ export class AuthService {
         setLogin(true)
         console.log("usuário logado")
         this.router.navigate(['/home'])
+        this.snackBar.open("Login efetuado com sucesso",'X',{
+          duration: 10000,
+          horizontalPosition:"center",
+          verticalPosition: "top"
+          
+        })
       }
     ).catch((error)=>{
       console.log(error.message)
@@ -34,6 +41,10 @@ export class AuthService {
     })
 
   }
+
+  
+
+  
 
 
 

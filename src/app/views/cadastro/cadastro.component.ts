@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/auth.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -7,7 +8,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./cadastro.component.css']
 })
 export class CadastroComponent implements OnInit {
-  
+  senha:any;
 
   formCadastro = new FormGroup({
     name: new FormControl('', Validators.required),
@@ -18,7 +19,7 @@ export class CadastroComponent implements OnInit {
        Validators.minLength(4),Validators.maxLength(8)])),
   })
 
-  constructor( private formBuilder: FormBuilder) { }
+  constructor( private formBuilder: FormBuilder, private authService:AuthService) { }
 
   ngOnInit(): void {
 
@@ -26,7 +27,7 @@ export class CadastroComponent implements OnInit {
 
 
   }
-
+  email:any=this.formCadastro.get('email');
 
   verificarData(){
     let dataAtual = new Date()
@@ -35,7 +36,6 @@ export class CadastroComponent implements OnInit {
 
 
   cadastratar(){
-
     console.log(this.formCadastro.get('senha')?.invalid)
     console.log(this.formCadastro, "meu formulario")
   }

@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
 
   public email:string="";
   public senha:string="";
+  login:boolean = false;
 
   public mostrarCadastro = false;
 

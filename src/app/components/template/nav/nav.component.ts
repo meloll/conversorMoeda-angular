@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { getLogin, setLogin } from 'src/app/app.component';
 
 @Component({
@@ -8,7 +9,7 @@ import { getLogin, setLogin } from 'src/app/app.component';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  constructor(private snackBar: MatSnackBar) { }
 
 
   ngOnInit(): void {
@@ -21,6 +22,12 @@ export class NavComponent implements OnInit {
 
   fazerLogOut(){
     setLogin(false);
+    this.snackBar.open("Logout efetuado com sucesso",'X',{
+      duration: 10000,
+      horizontalPosition:"center",
+      verticalPosition: "top"
+      
+    })
   }
 
 }
