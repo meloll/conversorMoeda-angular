@@ -13,7 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import{ReactiveFormsModule} from '@angular/forms'
-
+import { MatTableModule } from '@angular/material/table';
 
 import{AngularFireModule} from '@angular/fire'
 import {AngularFireAuth} from '@angular/fire/auth'
@@ -31,7 +31,6 @@ import { HomeComponent } from './views/home/home.component';
 import { ConversorComponent } from './views/conversor/conversor.component';
 import { LoginComponent } from './views/login/login.component';
 import { CadastroComponent } from './views/cadastro/cadastro.component';
-import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 
@@ -80,7 +79,8 @@ import { MatSortModule } from '@angular/material/sort';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTableModule
     
   ],
   providers: [AuthService],

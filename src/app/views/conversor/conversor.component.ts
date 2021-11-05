@@ -32,6 +32,11 @@ export class ConversorComponent implements OnInit {
       this.lista.push(res.CAD)
       this.lista.push(res.EUR)
       this.lista.push(res.JPY)
+      this.lista.push(res.ILS)
+      this.lista.push(res.CHF)
+      this.lista.push(res.CNY)
+      this.lista.push(res.GBP)
+
     })
    
     

@@ -26,8 +26,8 @@ interface Imodedas {
       name: string,
       pctChange: string,
       timestamp: string,
-      varBid: string,
-      sim:"USD"
+      varBid: string
+      
   }
   CAD:{
     ask: string,
@@ -56,6 +56,58 @@ interface Imodedas {
     varBid: string
   }
   JPY:{
+    ask: string,
+    bid: string,
+    code: string,
+    codein: string,
+    create_date: string,
+    high: string,
+    low: string,
+    name: string,
+    pctChange: string,
+    timestamp: string,
+    varBid: string
+  }
+  ILS:{
+    ask: string,
+    bid: string,
+    code: string,
+    codein: string,
+    create_date: string,
+    high: string,
+    low: string,
+    name: string,
+    pctChange: string,
+    timestamp: string,
+    varBid: string
+  }
+  CHF:{
+    ask: string,
+    bid: string,
+    code: string,
+    codein: string,
+    create_date: string,
+    high: string,
+    low: string,
+    name: string,
+    pctChange: string,
+    timestamp: string,
+    varBid: string
+  }
+  CNY:{
+    ask: string,
+    bid: string,
+    code: string,
+    codein: string,
+    create_date: string,
+    high: string,
+    low: string,
+    name: string,
+    pctChange: string,
+    timestamp: string,
+    varBid: string
+  }
+  GBP:{
     ask: string,
     bid: string,
     code: string,

@@ -30,5 +30,33 @@
         </div>
     </mat-card>
 
+<mat-card class="cardcad">
+    <table class="table table table-success table-striped  shadow-lg p-3 mb-5 bg-body rounde ">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Código da moeda</th>
+            <th scope="col">Par de Moeda</th>
+            <th scope="col">Preço Atual</th>
+            <th scope="col">Maior Preço</th>
+            <th scope="col">Menor Preço</th>
+            <th scope="col">Ultima atualização do preço</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of lista" >
+            <td>{{item.code}}</td>
+            <td>{{item.name}}</td>
+            <td>R${{item.ask}}</td>
+            <td>R${{item.high}}</td>
+            <td>R${{item.low}}</td>
+            <td>{{item.create_date}}</td>
+          </tr>
+        </tbody>
+      </table>
+</mat-card>   
+</div>   
+
+
 
     
