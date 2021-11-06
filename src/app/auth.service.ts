@@ -36,6 +36,12 @@ export class AuthService {
       }
     ).catch((error)=>{
       console.log(error.message)
+      this.snackBar.open("Login invalido, tente novamente",'X',{
+        duration: 5000,
+        horizontalPosition:"center",
+        verticalPosition: "top"
+        
+      })
 
       thisService.authError = error;
     })
